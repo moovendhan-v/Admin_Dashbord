@@ -1,0 +1,52 @@
+.
+├── Backend
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postgres_data  [error opening dir]
+│   ├── src
+│   │   ├── app.ts
+│   │   ├── config
+│   │   │   ├── config.json
+│   │   │   └── database.ts
+│   │   ├── controller
+│   │   │   └── UserController.ts
+│   │   ├── middleware
+│   │   │   └── errorHanler.ts
+│   │   ├── models
+│   │   │   └── Users.ts
+│   │   ├── routes
+│   │   │   ├── index.ts
+│   │   │   └── userRoutes.ts
+│   │   ├── scripts
+│   │   ├── services
+│   │   │   └── UserServices.ts
+│   │   ├── tests
+│   │   ├── types
+│   │   └── utils
+│   └── tsconfig.json
+├── Frontend
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   │   └── vite.svg
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.tsx
+│   │   ├── assets
+│   │   │   └── react.svg
+│   │   ├── index.css
+│   │   ├── main.tsx
+│   │   └── vite-env.d.ts
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── folder-structure.txt
+└── script.sh
+
+17 directories, 32 files

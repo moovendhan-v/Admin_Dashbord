@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src", // Sets the base directory for resolving non-relative module names
+    "paths": {
+      "@/*": ["*"] // Creates the `@/` alias for all files in the `src` directory
+    },
+    "target": "ES6", // Target ECMAScript version
+    "module": "CommonJS", // Specify module code generation
+    "strict": true, // Enable all strict type checking options
+    "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+    "moduleResolution": "node", // Determines how modules get resolved
+    "outDir": "./dist", // Redirect output structure to the dist directory
+    "skipLibCheck": true // Skip type checking of declaration files
+  },
+  "include": ["src/**/*"], // Include all .ts files in the src directory and subdirectories
+  "exclude": ["node_modules", "dist"] // Exclude node_modules and dist from compilation
+}

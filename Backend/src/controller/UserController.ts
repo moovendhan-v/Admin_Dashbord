@@ -1,23 +1,52 @@
 import { Request, Response, NextFunction } from 'express';
-import UserService from '../services/UserServices';
+import Models from '@/models/index';
+
+const User = Models.User;
+
+interface CreateUserRequestBody {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+interface CreateUserResponse {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
 
 class UserController {
-  static async createUser(req: Request, res: Response, next: NextFunction) {
-  //   try {
-  //     const user = await UserService.createUser(req.body, res, next);
-  //     res.status(201).json(user);
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // }
+  // This method now delegates to the User class
+  public async getUsers(req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const users = await User.findAll();
+      res.status(200).json(users);
+    } catch (error) {
+      next(error);
+    }
+  }
 
-  // static async getAllUsers(req: Request, res: Response, next: NextFunction) {
-  //   try {
-  //     const users = await UserService.getAllUsers(req.body, res, next);
-  //     res.status(200).json(users);
-  //   } catch (error) {
-  //     next(error);
-  //   }
+  // This method now delegates to the User class
+  public async createUser(
+    req: Request<{}, {}, CreateUserRequestBody>, 
+    res: Response<CreateUserResponse>, 
+    next: NextFunction
+  ): Promise<void> {
+    try {
+      const newUser = await User.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+      });
+
+      res.status(201).json({
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+      });
+    } catch (error) {
+      next(error);
+    }
   }
 }
 

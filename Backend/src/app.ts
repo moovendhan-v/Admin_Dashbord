@@ -1,8 +1,11 @@
+// app.ts
+
 import express from 'express';
 import { json } from 'body-parser';
-import routes from './routes/index';
-import { errorHandler } from './middleware/errorHanler';
-import sequelize from './config/database';
+import routes from './routes/index'; // Import routes from index.ts
+import { errorHandler } from '@/middleware/errorHanler'; // Ensure this errorHandler is correctly defined
+import sequelize from './config/database'; // Sequelize instance for database connection
+import { Config } from './config/config'; // Config file with port details
 
 const app = express();
 
@@ -10,13 +13,13 @@ const app = express();
 app.use(json());
 
 // Use your routes
-app.use('/api', routes);
+app.use('/api', routes); // This will map all your routes under /api, e.g., /api/users
 
 // Error handling middleware
-app.use(errorHandler);
+app.use(errorHandler); // Handle any errors thrown by routes or middlewares
 
 // Sync the database and start the server
-const PORT = process.env.PORT || 3000;
+const PORT = Config.PORT || 3000;
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
@@ -29,9 +32,4 @@ sequelize.sync().then(() => {
 // Welcome message for the root route
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to the API!' });
-  });
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
-

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src", // Sets the base directory for resolving non-relative module names
+    "baseUrl": "./", // Sets the base directory for resolving non-relative module names
     "paths": {
-      "@/*": ["*"] // Creates the `@/` alias for all files in the `src` directory
+      "@/*": ["src/*"] // Path alias for easier imports
     },
     "target": "ES6", // Target ECMAScript version
     "module": "CommonJS", // Specify module code generation

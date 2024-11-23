@@ -1,8 +1,11 @@
+// index.ts
+
 import { Router } from 'express';
-import userRoutes from './userRoutes';
+import userRoutes from './userRoutes'; // Import the user routes
 
 const router = Router();
 
-router.use('/users', userRoutes); // Map the '/users' route to userRoutes
+// Mount the userRoutes under /users path
+router.use('/users', userRoutes);
 
 export default router;

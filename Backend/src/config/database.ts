@@ -1,12 +1,15 @@
 import { Sequelize } from 'sequelize';
+import { Config } from "./config";
+
+console.log('Config', JSON.stringify(Config))
 
 const sequelize = new Sequelize({
-  database: process.env.DB_NAME || 'your_postgres_db',
-  username: process.env.DB_USER || 'your_postgres_user',
-  password: process.env.DB_PASS || 'your_postgres_password',
-  host: process.env.DB_HOST || 'localhost',    
+  database: Config.DB_NAME,
+  username: Config.DB_USER,
+  password: Config.DB_PASS,
+  host: Config.DB_HOST,
   dialect: 'postgres',             
-  port: parseInt(process.env.DB_PORT || '5432', 10),
+  port: parseInt(Config.DB_PORT || '5432', 10),
   logging: false,
 });
 

@@ -1,7 +1,7 @@
 // index.ts
 
 import { Router } from 'express';
-import userRoutes from './userRoutes'; // Import the user routes
+import userRoutes from './UserRoutes'; // Import the user routes
 
 const router = Router();
 

@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import { Config } from "./config";
+import { Config } from "./Env";
 
 console.log('Config', JSON.stringify(Config))
 

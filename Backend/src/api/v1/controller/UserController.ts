@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import Models from '@/models/index';
+import Models from '@/api/v1/models/Index';
 
 const User = Models.User;
 

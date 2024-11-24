@@ -1,0 +1,34 @@
+.
+├── Dockerfile
+├── docker-compose.yml
+├── folder-structure.txt
+├── package-lock.json
+├── package.json
+├── postgres_data
+├── src
+│   ├── App.ts
+│   ├── api
+│   │   └── v1
+│   │       ├── controller
+│   │       │   └── UserController.ts
+│   │       ├── middleware
+│   │       │   └── ErrorHanler.ts
+│   │       ├── models
+│   │       │   ├── Index.ts
+│   │       │   └── Users.models.ts
+│   │       ├── routes
+│   │       │   ├── Index.ts
+│   │       │   └── UserRoutes.ts
+│   │       └── services
+│   │           └── UserServices.ts
+│   └── config
+│       ├── Config.ts
+│       ├── DatabaseConfig.ts
+│       ├── Logger.ts
+│       ├── config.json
+│       ├── postman
+│       └── swagger
+├── tests
+└── tsconfig.json
+
+13 directories, 18 files

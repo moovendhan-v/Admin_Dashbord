@@ -1,7 +1,7 @@
 // userRoutes.ts
 
 import { Router } from 'express';
-import UserController from '@/controller/UserController';
+import UserController from '@/api/v1/controller/UserController';
 
 const router = Router();
 

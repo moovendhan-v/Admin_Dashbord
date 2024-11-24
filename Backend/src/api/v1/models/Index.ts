@@ -1,5 +1,5 @@
-import Users from '@/models/Users.models';
-import DbSequelize from '@/config/database';
+import Users from '@/api/v1/models/Users.models';
+import DbSequelize from '@/config/DatabaseConfig';
 
 const Models = {
     User: Users.initModel(DbSequelize),

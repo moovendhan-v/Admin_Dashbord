@@ -2,10 +2,10 @@
 
 import express from 'express';
 import { json } from 'body-parser';
-import routes from './routes/index'; // Import routes from index.ts
-import { errorHandler } from '@/middleware/errorHanler'; // Ensure this errorHandler is correctly defined
-import sequelize from './config/database'; // Sequelize instance for database connection
-import { Config } from './config/config'; // Config file with port details
+import routes from './api/v1/routes/Index'; // Import routes from index.ts
+import { errorHandler } from '@/api/v1/middleware/ErrorHanler'; // Ensure this errorHandler is correctly defined
+import sequelize from './config/DatabaseConfig'; // Sequelize instance for database connection
+import { Config } from './config/Env'; // Config file with port details
 
 const app = express();
 
